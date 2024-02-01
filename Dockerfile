@@ -3,9 +3,9 @@ FROM debian AS installer
 WORKDIR /src
 
 RUN apt-get update && apt-get install -y curl jq
-RUN curl https://api.github.com/repos/jagrosh/MusicBot/releases | jq .[0].tag_name
-RUN echo "Version: $VERSION"
-RUN curl -L -o JMusicBot.jar https://github.com/jagrosh/MusicBot/releases/download/$VERSION/JMusicBot-$VERSION.jar
+RUN export JMUSIC_VERSION=$(curl https://api.github.com/repos/jagrosh/MusicBot/releases | jq -r .[0].tag_name)
+RUN echo $JMUSIC_VERSION
+RUN curl -L -o JMusicBot.jar https://github.com/jagrosh/MusicBot/releases/download/$JMUSIC_VERSION/JMusicBot-$JMUSIC_VERSION.jar
 
 FROM debian
 
