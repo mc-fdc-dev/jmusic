@@ -1,4 +1,4 @@
-FROM debian AS installer
+FROM debian:stable-slim AS installer
 
 WORKDIR /src
 
@@ -7,7 +7,7 @@ RUN JMUSIC_VERSION=$(curl https://api.github.com/repos/jagrosh/MusicBot/releases
   echo $JMUSIC_VERSION && \
   curl -L -o JMusicBot.jar https://github.com/jagrosh/MusicBot/releases/download/$JMUSIC_VERSION/JMusicBot-$JMUSIC_VERSION.jar
 
-FROM debian
+FROM debian:stable-slim
 
 WORKDIR /app
 
