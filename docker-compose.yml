@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    restart: always
     volumes:
     - ./config.txt:/app/config.txt
     - ${PWD}/serversettings.json:/app/serversettings.json
