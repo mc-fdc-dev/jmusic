@@ -7,4 +7,4 @@ services:
       dockerfile: Dockerfile
     volumes:
     - ./config.txt:/app/config.txt
-    - ./serversettings.json:/app/serversettings.json
+    - ${PWD}/serversettings.json:/app/serversettings.json
