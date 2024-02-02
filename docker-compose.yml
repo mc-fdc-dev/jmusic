@@ -7,3 +7,7 @@ services:
       dockerfile: Dockerfile
     volumes:
     - ./config.txt:/app/config.txt
+    - serversettings:/app/serversettings.json
+
+volumes:
+  serversettings:
