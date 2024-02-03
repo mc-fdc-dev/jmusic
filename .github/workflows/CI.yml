@@ -29,3 +29,4 @@ jobs:
           push: true
           tags: |
             ghcr.io/${{ github.repository }}
+          platforms: linux/amd64,linux/arm64
