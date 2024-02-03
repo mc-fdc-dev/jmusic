@@ -5,6 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: ghcr.io/mc-fdc-dev/jmusic
     restart: always
     volumes:
     - ./config.txt:/app/config.txt
